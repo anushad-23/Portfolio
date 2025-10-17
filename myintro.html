@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clean & Professional — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#111216;
+      --muted:#6b7280;
+      --accent:#0ea5a4; /* teal accent */
+      --card:#f8fafc;
+      --max-width:1100px;
+      --radius:10px;
+      --gap:24px;
+      --transition:200ms ease;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:40px 20px;font-family:Roboto,system-ui,-apple-system,"Segoe UI",Arial; background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      display:flex;justify-content:center;
+    }
+    .wrap{width:100%;max-width:var(--max-width)}
+
+    /* NAV */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:34px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-family:Inter,system-ui;font-size:18px}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+    nav a.primary{color:var(--fg)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+    .eyebrow{color:var(--muted);font-size:13px;margin-bottom:8px}
+    h1{font-family:Inter,system-ui;font-size:34px;margin:0 0 12px 0;line-height:1.05}
+    p.lead{margin:0;color:var(--muted);max-width:60ch}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:8px;border:1px solid transparent;font-weight:700;cursor:pointer;transition:var(--transition)}
+    .btn.primary{background:var(--accent);color:white}
+    .btn.ghost{background:transparent;color:var(--fg);border-color:rgba(17,18,22,0.06)}
+
+    .hero-card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(17,18,22,0.04)}
+    .meta{display:flex;flex-direction:column;gap:6px}
+    .meta .skill{display:inline-block;padding:6px 10px;border-radius:999px;background:white;border:1px solid rgba(17,18,22,0.04);font-size:13px;color:var(--muted)}
+
+    /* PROJECTS */
+    .section{margin-top:44px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border-radius:12px;padding:16px;border:1px solid rgba(17,18,22,0.04);box-shadow:0 6px 20px rgba(16,24,40,0.03);transition:transform var(--transition),box-shadow var(--transition)}
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(16,24,40,0.06)}
+    .card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .card h3{margin:12px 0 6px 0;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .tags{margin-top:10px}
+    .tag{display:inline-block;background:rgba(14,165,164,0.08);color:var(--accent);border-radius:6px;padding:6px 8px;font-size:12px;margin-right:8px}
+
+    /* ABOUT / CONTACT */
+    .two-col{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    .panel{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(17,18,22,0.04)}
+    .resume{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:8px;border:1px solid rgba(17,18,22,0.06);background:white}
+
+    footer{margin-top:40px;color:var(--muted);font-size:13px;padding-bottom:40px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .two-col{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      nav a{display:none}
+      .grid{grid-template-columns:1fr}
+      .logo{width:48px;height:48px;font-size:16px}
+      body{padding:24px 16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AD</div>
+        <div>
+          <div style="font-weight:800;font-family:Inter;">Anusha Dronamraju</div>
+          <div style="font-size:13px;color:var(--muted);">Software Engineer • Backend & Data</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects" class="primary">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Hi — I'm a</div>
+          <h1>Software engineer building performant backend systems.</h1>
+          <p class="lead">I design scalable APIs, optimize data platforms, and help teams ship reliable software. I focus on building systems that are maintainable, observable, and fast.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Get in Touch</a>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="skill">React</span>
+            <span class="skill">Python</span>
+            <span class="skill">Postgres</span>
+            <span class="skill">AWS</span>
+            <span class="skill">DJANGO</span>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-weight:700">Available for work</div>
+              <div style="color:var(--muted);font-size:13px">Open to contract & full-time roles</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:800;font-size:20px">5+</div>
+              <div style="color:var(--muted);font-size:13px">Years experience</div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px">
+            <div style="font-weight:700;font-size:13px;margin-bottom:6px">Highlights</div>
+            <ul style="margin:0;padding-left:18px;color:var(--muted);">
+              <li>Built a service handling 10k req/sec</li>
+              <li>Designed fault-tolerant ETL pipelines</li>
+              <li>Led performance tuning and cost-optimizations</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" class="section">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <h2 style="margin:0;font-family:Inter;">Featured Projects</h2>
+          <div style="color:var(--muted);font-size:14px">Showcasing select case studies</div>
+        </div>
+
+        <div class="grid" style="margin-top:16px">
+          <!-- project 1 -->
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc" alt="project screenshot">
+            <h3>High-throughput API</h3>
+            <p>Designed a fault-tolerant API to handle 10k requests/second with autoscaling and observability.</p>
+            <div class="tags" style="margin-top:12px"><span class="tag">Go</span><span class="tag">kubernetes</span><span class="tag">Prometheus</span></div>
+          </article>
+
+          <!-- project 2 -->
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=def" alt="project screenshot">
+            <h3>Data Pipeline</h3>
+            <p>ETL pipeline that processes millions of events daily and stores aggregated metrics for analytics.</p>
+            <div class="tags" style="margin-top:12px"><span class="tag">Python</span><span class="tag">Kafka</span><span class="tag">Airflow</span></div>
+          </article>
+
+          <!-- project 3 -->
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ghi" alt="project screenshot">
+            <h3>Cost Optimization</h3>
+            <p>Reduced infra costs by 35% through right-sizing, caching, and workload re-architecting.</p>
+            <div class="tags" style="margin-top:12px"><span class="tag">AWS</span><span class="tag">Redis</span><span class="tag">Terraform</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <h2 style="margin:0;font-family:Inter">About</h2>
+          <div style="color:var(--muted);font-size:14px">Resume • Experience • Skills</div>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <div style="margin-top:12px;color:var(--muted);line-height:1.6">I focus on backend systems, distributed data processing, and engineering practices that scale. I enjoy partnering with product teams to transform ambiguous problems into reliable, measurable systems.</div>
+
+            <div style="margin-top:18px">
+              <h4 style="margin:0 0 8px 0">Selected Experience</h4>
+              <div style="color:var(--muted);font-size:14px">Senior Engineer, Example Corp — 2023–Present</div>
+              <div style="color:var(--muted);font-size:14px;margin-top:8px">Software Engineer, Startup — 2020–2023</div>
+            </div>
+
+            <div style="margin-top:18px">
+              <h4 style="margin:0 0 8px 0">Skills</h4>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+                <div class="resume">Go</div>
+                <div class="resume">Python</div>
+                <div class="resume">Postgres</div>
+                <div class="resume">AWS</div>
+                <div class="resume">Docker</div>
+                <div class="resume">Kubernetes</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="panel">
+            <div style="font-weight:700">Download Resume</div>
+            <div style="color:var(--muted);font-size:13px;margin-top:8px">PDF resume available for download.</div>
+            <a class="btn primary" href="#" style="display:inline-block;margin-top:12px">Download</a>
+
+            <div style="margin-top:18px">
+              <div style="font-weight:700">Education</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">BTech.AI&DS — KL University</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <h2 style="font-family:Inter;margin:0">Contact</h2>
+        <div style="display:flex;gap:18px;align-items:center;margin-top:12px;flex-wrap:wrap">
+          <div class="panel">
+            <div style="font-weight:700">Email</div>
+            <div style="color:var(--muted);margin-top:6px">hello@example.com</div>
+            <div style="margin-top:12px"><a class="btn ghost" href="mailto:hello@example.com">Email me</a></div>
+          </div>
+
+          <div class="panel">
+            <div style="font-weight:700">Social</div>
+            <div style="color:var(--muted);margin-top:6px">
+              <a href="#" style="text-decoration:none;color:var(--accent);font-weight:700">GitHub</a> • <a href="#" style="text-decoration:none;color:var(--accent);font-weight:700">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © 2025 Anusha Dronamraju — Built with HTML,CSS & JS
+    </footer>
+  </div>
+
+  <script>
+    // Small enhancements: smooth scrolling for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href === '#') return; // allow resume button as placeholder
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+  </script>
+</body>
+</html>
